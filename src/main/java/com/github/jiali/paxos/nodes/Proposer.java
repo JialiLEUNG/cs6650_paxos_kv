@@ -11,13 +11,12 @@ import java.util.TimerTask;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
-import java.util.logging.Logger;
 
 import com.github.jiali.paxos.datagram.*;
-import com.github.jiali.paxos.utils.client.PaxosClient;
+import com.github.jiali.paxos.utils.PaxosClient;
 import com.github.jiali.paxos.datagram.PrepareRequest;
-import com.github.jiali.paxos.utils.serializable.ObjectSerialize;
-import com.github.jiali.paxos.utils.serializable.ObjectSerializeImpl;
+import com.github.jiali.paxos.utils.ObjectSerialize;
+import com.github.jiali.paxos.utils.ObjectSerializeImpl;
 
 public class Proposer {
 	enum ProposerState {
@@ -72,29 +71,29 @@ public class Proposer {
 	// timeout for each phase(ms)
 	private int timeout;
 
-	// 准备提交的状态
-	private BlockingQueue<Value> readyToSubmitQueue = new ArrayBlockingQueue<>(1);
+	// ready to submitToBuffer queue
+	private BlockingQueue<Value> pendingSubmitQueue = new ArrayBlockingQueue<>(1);
 
-	// 成功提交的状态
-	private BlockingQueue<Value> hasSummitQueue = new ArrayBlockingQueue<>(1);
+	// submitted queue
+	private BlockingQueue<Value> hasSubmitQueue = new ArrayBlockingQueue<>(1);
 
-	// 上一次的提交是否成功
-	private boolean isLastSumbitSucc = false;
+	// status of the last submitToBuffer
+	private boolean isLastSubmitOk = false;
 
-	// 本节点的accepter
+	// acceptor of the current node
 	private Acceptor acceptor;
 
-	// 组id
+	// group id
 	private int groupId;
 
-	// 消息队列，保存packetbean
+	// message queue to store datagram
 	private BlockingQueue<DatagramBun> msgQueue = new LinkedBlockingQueue<>();
 
 	private BlockingQueue<DatagramBun> submitMsgQueue = new LinkedBlockingQueue<>();
 
 	private ObjectSerialize objectSerialize = new ObjectSerializeImpl();
 
-	private Logger logger = Logger.getLogger("KV-Paxos");
+//	private Logger logger = Logger.getLogger("KV-Paxos");
 
 	// 客户端
 	private PaxosClient client;
@@ -158,7 +157,7 @@ public class Proposer {
 			break;
 		case "AcceptResponse":
 			AcceptResponse acceptResponse = (AcceptResponse) bean.getPayload();
-			onAcceptResponce(acceptResponse.getId(), acceptResponse.getInstance(),
+			onAcceptResponse(acceptResponse.getId(), acceptResponse.getInstance(),
 					acceptResponse.isOk());
 			break;
 		case "SubmitPacket":
@@ -178,38 +177,57 @@ public class Proposer {
 	 * @throws InterruptedException
 	 */
 	public Value submit(Value object) throws InterruptedException {
-		this.readyToSubmitQueue.put(object);
-		beforPrepare();
-		Value value = this.hasSummitQueue.take();
+		this.pendingSubmitQueue.put(object);
+		beforePrepare();
+		Value value = this.hasSubmitQueue.take();
 		return value;
 	}
 
 	/**
-	 * 
-	 * 在prepare操作之前
+	 * actions before sending prepare to the quorum of acceptors:
+	 * (1) set up instance
+	 * (2) check if the previous instance is successfully committed.
+	 * If yes, skip phase 1 and proceed.
+	 * If no, start to prepare the prepare message.
 	 */
-	public void beforPrepare() {
+	public void beforePrepare() {
 		// 获取accepter最近的一次instance的id
-		this.currentInstance = Math.max(this.currentInstance, acceptor.getLastInstanceId());
+		this.currentInstance = Math.max(this.currentInstance, acceptor.getMostRecentInstanceId());
 		this.currentInstance++;
 		Instance instance = new Instance(1, new HashSet<>(), null, 0, new HashSet<>(), false, ProposerState.READY);
 		this.instanceState.put(this.currentInstance, instance);
-		if (this.isLastSumbitSucc == false) {
+		if (this.isLastSubmitOk == false) {
 			// 执行完整的流程
 			prepare(this.id, this.currentInstance, 1);
 		} else {
 			// multi-paxos 中的优化，直接accept
 			instance.isSucc = true;
-			accept(this.id, this.currentInstance, 1, this.readyToSubmitQueue.peek());
+			accept(this.id, this.currentInstance, 1, this.pendingSubmitQueue.peek());
 		}
 	}
 
 	/**
-
+	 * 	 * 将prepare发送给所有的accepter，并设置超时。
+	 *      * 如果超时，则判断阶段1是否完成，如果未完成，则ballot加一之后继续执行阶段一。
+	 *      *
+	 * 	 * Phase 1a: Prepare
+	 *      * A Proposer creates a message, which we call a "Prepare",
+	 *      * identified with a number n.
+	 *      * Note that n is not the value to be proposed and maybe agreed on,
+	 *      * but just a number which uniquely identifies this initial message by the proposer
+	 *      * (to be sent to the acceptors).
+	 *      * The number n must be greater than any number
+	 *      * used in any of the previous Prepare messages by this Proposer.
+	 *      * Then, it sends the Prepare message containing n to a Quorum of Acceptors.
+	 *      * Note that the Prepare message only contains the number n
+	 *      * (that is, it does not have to contain e.g. the proposed value, often denoted by v).
+	 *      * The Proposer decides who is in the Quorum[how?].
+	 *      *
+	 *      * A Proposer should not initiate Paxos
+	 *      * if it cannot communicate with at least a Quorum of Acceptors.
+	 * @param id
 	 * @param instance
-	 *            current instance
 	 * @param ballot
-	 *            prepare's ballot
 	 */
 	private void prepare(int id, int instance, int ballot) {
 		this.instanceState.get(instance).state = ProposerState.PREPARE;
@@ -230,7 +248,7 @@ public class Proposer {
 
 			@Override
 			public void run() {
-				// retry phase 1 again!
+				// retry phase 1
 				Instance current = instanceState.get(instance);
 				if (current.state == ProposerState.PREPARE) {
 					current.ballot++;
@@ -241,12 +259,29 @@ public class Proposer {
 	}
 
 	/**
-	 * 接收到accepter对于prepare的回复
-	 * 
-	 * @param id
+	 * Phase 2a: Accept
+	 *
+	 * If a Proposer receives a majority of Promises from a Quorum of Acceptors,
+	 * it needs to set a value v to its proposal.
+	 * If any Acceptors had previously accepted any proposal,
+	 * then they'll have sent their values to the Proposer,
+	 * who now must set the value of its proposal, v,
+	 * to the value associated with the highest proposal number reported by the Acceptors,
+	 * let's call it z.
+	 * If none of the Acceptors had accepted a proposal up to this point,
+	 * then the Proposer may choose the value it originally wanted to propose, say x.
+	 * The Proposer sends an Accept message, (n, v),
+	 * to a Quorum of Acceptors with the chosen value for its proposal, v,
+	 * and the proposal number n
+	 * (which is the same as the number contained in the Prepare message previously sent to the Acceptors).
+	 * So, the Accept message is either (n, v=z) or,
+	 * in case none of the Acceptors previously accepted a value, (n, v=x).
+	 * This Accept message should be interpreted as a "request",
+	 * as in "Accept this proposal, please!".
+	 * @param peerId
 	 * @param instance
 	 * @param ok
-	 * @param ballot
+	 * @param ab
 	 * @param av
 	 * @throws InterruptedException
 	 */
@@ -263,7 +298,7 @@ public class Proposer {
 			}
 			if (current.pSet.size() >= this.acceptorNo / 2 + 1) {
 				if (current.value == null) {
-					Value myValue = this.readyToSubmitQueue.peek();
+					Value myValue = this.pendingSubmitQueue.peek();
 					current.value = myValue;
 					current.isSucc = true;
 				}
@@ -273,7 +308,7 @@ public class Proposer {
 	}
 
 	/**
-	 * 向所有的accepter发送accept，并设置状态。
+	 * send sentAcceptRequest request to all acceptors, and set the ProposerState to ACCEPT
 	 * 
 	 * @param id
 	 * @param instance
@@ -301,7 +336,7 @@ public class Proposer {
 		setTimeout(new TimerTask() {
 			@Override
 			public void run() {
-				// retry phase 2 again!
+				// retry phase 2 if fail
 				Instance current = instanceState.get(instance);
 				if (current.state == ProposerState.ACCEPT) {
 					current.ballot++;
@@ -312,36 +347,35 @@ public class Proposer {
 	}
 
 	/**
-	 * 接收到accepter返回的accept响应
-	 * 
+	 *
 	 * @param peerId
 	 * @param instance
 	 * @param ok
 	 * @throws InterruptedException
 	 */
-	public void onAcceptResponce(int peerId, int instance, boolean ok) throws InterruptedException {
+	public void onAcceptResponse(int peerId, int instance, boolean ok) throws InterruptedException {
 		Instance current = this.instanceState.get(instance);
 		if (current.state != ProposerState.ACCEPT)
 			return;
 		if (ok) {
 			current.acceptSet.add(peerId);
 			if (current.acceptSet.size() >= this.acceptorNo / 2 + 1) {
-				// 流程结束
+				// paxos ends
 				done(instance);
 				if (current.isSucc) {
-					this.isLastSumbitSucc = true;
-					this.hasSummitQueue.put(this.readyToSubmitQueue.take());
+					this.isLastSubmitOk = true;
+					this.hasSubmitQueue.put(this.pendingSubmitQueue.take());
 				} else {
-					// 说明这个instance的id已经被占有
-					this.isLastSumbitSucc = false;
-					beforPrepare();
+					// this current instance has been occupied
+					this.isLastSubmitOk = false;
+					beforePrepare();
 				}
 			}
 		}
 	}
 
 	/**
-	 * 本次paxos选举结束
+	 * paxos ends for the current voting
 	 */
 	public void done(int instance) {
 		this.instanceState.get(instance).state = ProposerState.FINISH;

@@ -8,14 +8,14 @@ import java.util.Scanner;
 
 import com.github.jiali.paxos.main.KvPaxosClient;
 import com.google.gson.Gson;
+import com.github.jiali.paxos.clientRequests.ClientInput;
 
 public class Client {
 
 	public static void main(String[] args) {
 		try {
 			KvPaxosClient client = new KvPaxosClient();
-//			client.setSendBufferSize(20);
-			client.setRemoteAddress("localhost", Integer.valueOf(args[0]));
+			client.targetAddress("localhost", Integer.valueOf(args[0]));
 			Gson gson = new Gson();
 
 			Scanner clientScanner = new Scanner(new File(args[1])); // "./src/main/java/com/github/jiali/paxos/clientRequests/ClientRequest.txt"

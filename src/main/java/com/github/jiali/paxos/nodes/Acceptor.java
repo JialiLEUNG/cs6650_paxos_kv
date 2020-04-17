@@ -13,10 +13,10 @@ import java.util.logging.Logger;
 
 import com.github.jiali.paxos.datagram.*;
 import com.github.jiali.paxos.utils.FilesHandler;
-import com.github.jiali.paxos.utils.client.PaxosClient;
+import com.github.jiali.paxos.utils.PaxosClient;
 import com.github.jiali.paxos.datagram.AcceptRequest;
-import com.github.jiali.paxos.utils.serializable.ObjectSerialize;
-import com.github.jiali.paxos.utils.serializable.ObjectSerializeImpl;
+import com.github.jiali.paxos.utils.ObjectSerialize;
+import com.github.jiali.paxos.utils.ObjectSerializeImpl;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -76,6 +76,7 @@ public class Acceptor {
 		this.nodeConfiguration = nodeConfiguration;
 		this.groupId = groupId;
 		this.client = client;
+		// recover from instance
 		instanceRecover();
 		new Thread(() -> {
 			while (true) {
@@ -100,7 +101,7 @@ public class Acceptor {
 	}
 
 	/**
-	 * 处理接收到的packetbean
+	 * receive incoming request (prepare or accept) and act on it acordinally
 	 * 
 	 * @param bean
 	 * @throws UnknownHostException
@@ -110,12 +111,12 @@ public class Acceptor {
 		switch (bean.getType()) {
 		case "PrepareRequest":
 			PrepareRequest prepareRequest = (PrepareRequest) bean.getPayload();
-			onPrepare(prepareRequest.getPeerId(), prepareRequest.getInstance(), prepareRequest.getBallot());
+			respondToPrepare(prepareRequest.getPeerId(), prepareRequest.getInstance(), prepareRequest.getBallot());
 			break;
 		case "AcceptRequest":
 			//AcceptRequest acceptRequest = gson.fromJson(bean.getPayload(), AcceptRequest.class);
 			AcceptRequest acceptRequest = (AcceptRequest) bean.getPayload();
-			onAccept(acceptRequest.getId(), acceptRequest.getInstance(), acceptRequest.getBallot(),
+			respondToAccept(acceptRequest.getId(), acceptRequest.getInstance(), acceptRequest.getBallot(),
 					acceptRequest.getValue());
 			break;
 		default:
@@ -125,26 +126,41 @@ public class Acceptor {
 	}
 
 	/**
-	 * handle prepare from proposer
-	 * 
+	 * Phase 1b: Promise
+	 * Any of the Acceptors waits for a Prepare message from any of the Proposers.
+	 * If an Acceptor receives a Prepare message,
+	 * the Acceptor must look at the identifier number n of the just received Prepare message.
+	 * There are two cases.
+	 * If n is higher than every previous proposal number received,
+	 * from any of the Proposers, by the Acceptor,
+	 * then the Acceptor must return a message, which we call a "Promise", to the Proposer,
+	 * to ignore all future proposals having a number less than n.
+	 * If the Acceptor accepted a proposal at some point in the past,
+	 * it must include the previous proposal number, say m,
+	 * and the corresponding accepted value, say w, in its response to the Proposer.
+	 *
+	 * If n is <= any previous proposal number received from any Proposer by the Acceptor,
+	 * the Acceptor can ignore the received proposal.
+	 * It does not have to answer in this case for Paxos to work.
+	 * However, for the sake of optimization,
+	 * sending a denial (Nack) response would tell the Proposer
+	 * that it can stop its attempt to create consensus with proposal n.
+	 * @param peerId
 	 * @param instance
-	 *            current instance
 	 * @param ballot
-	 *            prepare ballot
 	 * @throws IOException
-	 * @throws UnknownHostException
 	 */
-	public void onPrepare(int peerId, int instance, int ballot) throws UnknownHostException, IOException {
+	public void respondToPrepare(int peerId, int instance, int ballot) throws UnknownHostException, IOException {
 		if (!instanceStatus.containsKey(instance)) {
 			instanceStatus.put(instance, new Instance(ballot, null, 0));
-			// 持久化到磁盘
+			// write data to disk
 			instancePersistence();
 			prepareResponse(peerId, id, instance, true, 0, null);
 		} else {
 			Instance current = instanceStatus.get(instance);
 			if (ballot > current.ballot) {
 				current.ballot = ballot;
-				// 持久化到磁盘
+				// write data to disk
 				instancePersistence();
 				prepareResponse(peerId, id, instance, true, current.acceptedBallot, current.value);
 			} else {
@@ -155,22 +171,18 @@ public class Acceptor {
 
 	/**
 	 * 
-	 * @param id
-	 *            accepter's id
-	 * @param ok
-	 *            ok or reject
-	 * @param ab
-	 *            accepted ballot
-	 * @param av
-	 *            accepted value
+	 * @param id accepter's id
+	 * @param ACK ok or reject
+	 * @param acceptedBallot accepted ballot
+	 * @param acceptedValue  accepted value
 	 * @throws IOException
 	 * @throws UnknownHostException
 	 */
-	private void prepareResponse(int peerId, int id, int instance, boolean ok, int ab, Value av)
+	private void prepareResponse(int peerId, int id, int instance, boolean ACK, int acceptedBallot, Value acceptedValue)
 			throws UnknownHostException, IOException {
 		DatagramBun bean = new DatagramBun("PrepareResponse",
-				new PrepareResponse(id, instance, ok, ab, av));
-		NodeInfo peer = getSpecInfoObect(peerId);
+				new PrepareResponse(id, instance, ACK, acceptedBallot, acceptedValue));
+		NodeInfo peer = getObjectById(peerId);
 		this.client.sendTo(peer.getHost(), peer.getPort(), 
 				this.objectSerialize.objectToObjectArray(new Datagram(bean, groupId, NodeType.PROPOSER)));
 	}
@@ -178,17 +190,14 @@ public class Acceptor {
 	/**
 	 * handle accept from proposer
 	 * 
-	 * @param instance
-	 *            current instance
-	 * @param ballot
-	 *            accept ballot
-	 * @param value
-	 *            accept value
+	 * @param instance current instance
+	 * @param ballot  accepted ballot
+	 * @param value  accepted value
 	 * @throws IOException
 	 * @throws UnknownHostException
 	 */
-	public void onAccept(int peerId, int instance, int ballot, Value value) throws UnknownHostException, IOException {
-		this.logger.info("[Acceptor Responds to ACCEPT Request from Proposer: " + peerId + " Instance: " + instance + " Ballot: " + ballot + " Value: " + value.getPayload());
+	public void respondToAccept(int peerId, int instance, int ballot, Value value) throws UnknownHostException, IOException {
+		this.logger.info("Acceptor Responds to ACCEPT Request from Proposer: " + peerId + " Instance: " + instance + " Ballot: " + ballot + " Value: " + value.getPayload());
 		if (!this.instanceStatus.containsKey(instance)) {
 			acceptResponse(peerId, id, instance, false);
 		} else {
@@ -196,48 +205,51 @@ public class Acceptor {
 			if (ballot == current.ballot) {
 				current.acceptedBallot = ballot;
 				current.value = value;
-				// 成功
-				this.logger.info("[Acceptor responds to ACCEPT request succeed.]");
+				// successfully receive ballot, value
+				this.logger.info("+++++++ Acceptor responds to ACCEPT request succeed.");
 				this.acceptedValue.put(instance, value);
 				if (!this.instanceStatus.containsKey(instance + 1)) {
-					// multi-paxos 中的优化，省去了连续成功后的prepare阶段
+					// Multi-Paxos when phase 1 can be skipped:
+					// subsequent instances of the basic Paxos protocol (represented by I+1) use the same leader,
+					// so the phase 1, which consist in the Prepare and Promise sub-phases, is skipped.
+					// Note that the Leader should be stable, i.e. it should not crash or change.
 					this.instanceStatus.put(instance + 1, new Instance(1, null, 0));
 				}
-				// 保存最后一次成功的instance的位置，用于proposer直接从这里开始执行
+				// save the last instance id so that the proposer can start from there.
 				this.lastInstanceId = instance;
-				// 持久化到磁盘
+				// write data to disk
 				instancePersistence();
 				acceptResponse(peerId, id, instance, true);
 			} else {
 				acceptResponse(peerId, id, instance, false);
 			}
 		}
-		this.logger.info("[Acceptor responds to ACCEPT request end.]");
+		this.logger.info("Acceptor responds to ACCEPT request end.");
 	}
 
-	private void acceptResponse(int peerId, int id, int instance, boolean ok) throws UnknownHostException, IOException {
-		NodeInfo nodeInfo = getSpecInfoObect(peerId);
-		DatagramBun bean = new DatagramBun("AcceptResponse", new AcceptResponse(id, instance, ok));
+	private void acceptResponse(int peerId, int id, int instance, boolean ACK) throws UnknownHostException, IOException {
+		NodeInfo nodeInfo = getObjectById(peerId);
+		DatagramBun bean = new DatagramBun("AcceptResponse", new AcceptResponse(id, instance, ACK));
 		this.client.sendTo(nodeInfo.getHost(), nodeInfo.getPort(),
 				this.objectSerialize.objectToObjectArray(new Datagram(bean, groupId, NodeType.PROPOSER)));
 	}
 
 	/**
-	 * proposer从这获取最近的instance的id
+	 * proposer gets Most Recent InstanceId
 	 * 
 	 * @return
 	 */
-	public int getLastInstanceId() {
+	public int getMostRecentInstanceId() {
 		return lastInstanceId;
 	}
 
 	/**
-	 * 获取特定的info
+	 * get object by id
 	 * 
 	 * @param key
 	 * @return
 	 */
-	private NodeInfo getSpecInfoObect(int key) {
+	private NodeInfo getObjectById(int key) {
 		for (NodeInfo each : this.proposers) {
 			if (key == each.getId()) {
 				return each;
@@ -247,7 +259,7 @@ public class Acceptor {
 	}
 
 	/**
-	 * 在磁盘上存储instance
+	 * write instance to disk
 	 */
 	private void instancePersistence() {
 		if (!this.nodeConfiguration.isEnableDataPersistence())
@@ -264,7 +276,7 @@ public class Acceptor {
 	}
 
 	/**
-	 * instance恢复
+	 * instance recovery
 	 */
 	private void instanceRecover() {
 		if (!this.nodeConfiguration.isEnableDataPersistence())
@@ -291,7 +303,7 @@ public class Acceptor {
 	}
 	
 	/**
-	 * 获取instance持久化的文件位置
+	 * write instance to disk
 	 * @return
 	 */
 	private String getInstanceFileAddr() {
