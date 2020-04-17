@@ -1,0 +1,78 @@
+// The current gRPC uses protocol buffers
+// which is mechanism for serializing structured data.
+// It is used for describing both the service interface
+// and the structure of the payload messages.
+// If you want to add more methods, edit this proto file
+// and update it with a the new method with the same request and response types.
+
+// Once you have specified the data structures,
+// you use the protocol buffer compiler protoc to generate data access classes
+// These provide simple accessors for each field (e.g., name() and set_name())
+// as well as methods to serialize/parse the whole structure to/from
+// raw bytes.
+
+syntax = "proto3";
+
+package com.github.jiali.paxos.proto.keyValueStore;
+
+option java_package = "keyValueStore";
+option java_generic_services = true;
+
+// The protocol buffer data is structured as messages,
+// where each message is a small logical record of information
+// containing a series of name-value pairs called fields.
+// The request message containing the user GET/PUT/DELETE request string
+
+
+
+
+// 1. define message sent from client to server (user request)
+message KeyValRequest{
+    string keyValDict = 1;
+}
+
+// 2. define message sent from server to client (server response)
+// The response message containing the response
+message KeyValReply{
+    string message = 1;
+}
+
+// 3. define KeyValStore service
+service KeyValStore{
+    // send a KeyValStore request
+    rpc Put(PutRequest) returns (PutResponse);
+    rpc Get(GetRequest) returns (GetResponse);
+    rpc Delete(DeleteRequest) returns (DeleteResponse);
+}
+
+message PutRequest{
+    bytes key = 1;
+    bytes value = 2;
+}
+
+message PutResponse{
+    bytes msg = 1; // sent response message back to client
+}
+
+message GetRequest{
+    bytes key = 1;
+}
+
+message GetResponse{
+    bytes msg = 1; // sent response message back to client
+    bytes value = 2;
+}
+
+message DeleteRequest{
+    bytes key = 1;
+}
+
+message DeleteResponse{
+    bytes msg = 1; // sent response message back to client
+}
+
+
+
+
+
+

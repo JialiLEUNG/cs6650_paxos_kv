@@ -1,0 +1,27 @@
+get apple
+delete apple
+put apple
+get
+delete
+put
+get apple 10 10
+delete apple
+put apple 10
+put orange 5
+get apple
+get flower 5
+put flower 80
+put pear -9
+put peach 3
+get peach
+delete orange
+delete book
+get pear
+put apple 30
+put orange 40
+get apple 30
+get orange
+delete orange
+get orange
+get apple
+Exit
