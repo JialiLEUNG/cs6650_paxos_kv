@@ -1,16 +1,16 @@
 package com.github.jiali.paxos.kvTest;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
-import com.github.jiali.paxos.core.PaxosCallback;
+import com.github.jiali.paxos.nodes.PaxosCallback;
 import com.google.gson.Gson;
 
 public class KvCallback implements PaxosCallback {
 	/**
-	 * hashmap to store kv pair.
+	 * hashmap to store kvStore pair.
 	 */
-	private Map<String, String> kv = new HashMap<>();
+	private ConcurrentMap<String, String> kvStore = new ConcurrentHashMap<>();
 	private Gson gson = new Gson();
 
 	@Override
@@ -18,19 +18,19 @@ public class KvCallback implements PaxosCallback {
 		/**
 		 * three operations: get, put, and delete
 		 */
-		String msString = new String(msg);
+		String msgString = new String(msg);
 		// convert JSON string to Java objects
-		ClientInput bean = gson.fromJson(msString, ClientInput.class);
+		ClientInput bean = gson.fromJson(msgString, ClientInput.class);
 		switch (bean.getOperation()) {
 		case "get":
-			System.out.println("GET KEY: " + bean.getKey() + "Result: " + kv.get(bean.getKey()) + " Succeed");
+			System.out.println("GET KEY: " + bean.getKey() + "Result: " + kvStore.get(bean.getKey()) + " Succeed");
 			break;
 		case "put":
-			kv.put(bean.getKey(), bean.getValue());
+			kvStore.put(bean.getKey(), bean.getValue());
 			System.out.println("PUT KEY: " + bean.getKey() + " VALUE: " + bean.getValue() + " Succeed.");
 			break;
 		case "delete":
-			kv.remove(bean.getKey());
+			kvStore.remove(bean.getKey());
 			System.out.println("DELETE KEY: " + bean.getKey() + " Succeed.");
 			break;
 		default:

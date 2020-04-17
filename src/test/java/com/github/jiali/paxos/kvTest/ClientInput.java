@@ -14,10 +14,11 @@ public class ClientInput {
 	public String getOperation() {
 		return operation;
 	}
-	public String getKey() {
-		return key;
-	}
 	public String getValue() {
 		return value;
 	}
+	public String getKey() {
+		return key;
+	}
+
 }

@@ -6,12 +6,12 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.UUID;
 
-import com.github.jiali.paxos.core.NodeType;
+import com.github.jiali.paxos.nodes.NodeType;
 import com.github.jiali.paxos.utils.client.PaxosClient;
 import com.github.jiali.paxos.utils.client.PaxosClientImpl;
-import com.github.jiali.paxos.packet.Packet;
-import com.github.jiali.paxos.packet.PacketBean;
-import com.github.jiali.paxos.packet.Value;
+import com.github.jiali.paxos.datagram.Datagram;
+import com.github.jiali.paxos.datagram.DatagramBun;
+import com.github.jiali.paxos.datagram.Value;
 import com.github.jiali.paxos.utils.serializable.ObjectSerialize;
 import com.github.jiali.paxos.utils.serializable.ObjectSerializeImpl;
 
@@ -63,8 +63,8 @@ public class KvPaxosClient {
 		if (this.buffer.isEmpty())
 			return;
 		UUID uuid = UUID.randomUUID();
-		Packet packet = new Packet(new PacketBean("SubmitPacket", new Value(uuid, this.objectSerialize.objectToObjectArray(this.buffer))), groupId, NodeType.SERVER);
-		this.paxosClient.sendTo(this.host, this.port, this.objectSerialize.objectToObjectArray(packet));
+		Datagram datagram = new Datagram(new DatagramBun("SubmitPacket", new Value(uuid, this.objectSerialize.objectToObjectArray(this.buffer))), groupId, NodeType.SERVER);
+		this.paxosClient.sendTo(this.host, this.port, this.objectSerialize.objectToObjectArray(datagram));
 		this.buffer.clear();
 	}
 	

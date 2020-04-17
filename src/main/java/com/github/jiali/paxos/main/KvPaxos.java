@@ -7,20 +7,18 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
-import com.github.jiali.paxos.core.Proposer;
-import com.github.jiali.paxos.utils.FileUtils;
+import com.github.jiali.paxos.nodes.Proposer;
+import com.github.jiali.paxos.utils.FilesHandler;
 import com.github.jiali.paxos.utils.client.PaxosClient;
 import com.github.jiali.paxos.utils.client.PaxosClientImpl;
-import com.github.jiali.paxos.core.Accepter;
-import com.github.jiali.paxos.core.NodeConfiguration;
-import com.github.jiali.paxos.core.NodeInfo;
-import com.github.jiali.paxos.core.Learner;
-import com.github.jiali.paxos.core.PaxosCallback;
-import com.github.jiali.paxos.packet.Packet;
+import com.github.jiali.paxos.nodes.Acceptor;
+import com.github.jiali.paxos.nodes.NodeConfiguration;
+import com.github.jiali.paxos.nodes.NodeInfo;
+import com.github.jiali.paxos.nodes.Learner;
+import com.github.jiali.paxos.nodes.PaxosCallback;
+import com.github.jiali.paxos.datagram.Datagram;
 import com.github.jiali.paxos.utils.serializable.ObjectSerialize;
 import com.github.jiali.paxos.utils.serializable.ObjectSerializeImpl;
 import com.github.jiali.paxos.utils.server.CommServer;
@@ -48,7 +46,7 @@ public class KvPaxos {
 
 	private Map<Integer, Proposer> groupidToProposer = new HashMap<>();
 
-	private Map<Integer, Accepter> groupidToAccepter = new HashMap<>();
+	private Map<Integer, Acceptor> groupidToAccepter = new HashMap<>();
 
 	private Map<Integer, Learner> groupidToLearner = new HashMap<>();
 
@@ -66,36 +64,27 @@ public class KvPaxos {
 	public KvPaxos(String confFile) throws IOException {
 		super();
 		this.confFile = confFile;
-		this.nodeConfiguration = gson.fromJson(FileUtils.readFromFile(this.confFile), NodeConfiguration.class);
+		this.nodeConfiguration = gson.fromJson(FilesHandler.readFromFile(this.confFile), NodeConfiguration.class);
 		this.nodeInfo = getMyAcceptOrProposer(this.nodeConfiguration.getNodes());
-		// 启动客户端
+		// client
 		this.client = new PaxosClientImpl();
-		//this.logger.setLevel(Level.WARNING);
 	}
 
-	/**
-	 * 设置log级别
-	 * @param level
-	 * 级别
-	 */
-	public void setLogLevel(Level level) {
-		this.logger.setLevel(level);
-	}
 
 	/**
-	 * 
+	 *
 	 * @param
 	 * @param executor
 	 */
 	public void setGroupId(int groupId, PaxosCallback executor) {
-		Accepter accepter = new Accepter(nodeInfo.getId(), nodeConfiguration.getNodes(), nodeInfo, nodeConfiguration, groupId,
+		Acceptor acceptor = new Acceptor(nodeInfo.getId(), nodeConfiguration.getNodes(), nodeInfo, nodeConfiguration, groupId,
 				this.client);
 		Proposer proposer = new Proposer(nodeInfo.getId(), nodeConfiguration.getNodes(), nodeInfo, nodeConfiguration.getTimeout(),
-				accepter, groupId, this.client);
-		Learner learner = new Learner(nodeInfo.getId(), nodeConfiguration.getNodes(), nodeInfo, nodeConfiguration, accepter,
+				acceptor, groupId, this.client);
+		Learner learner = new Learner(nodeInfo.getId(), nodeConfiguration.getNodes(), nodeInfo, nodeConfiguration, acceptor,
 				executor, groupId, this.client);
 		this.groupidToCallback.put(groupId, executor);
-		this.groupidToAccepter.put(groupId, accepter);
+		this.groupidToAccepter.put(groupId, acceptor);
 		this.groupidToProposer.put(groupId, proposer);
 		this.groupidToLearner.put(groupId, learner);
 	}
@@ -125,30 +114,29 @@ public class KvPaxos {
 	public void start() throws IOException, InterruptedException, ClassNotFoundException {
 		// 启动paxos服务器
 		CommServer server = new CommServerImpl(this.nodeInfo.getPort());
-		System.out.println("Server " + nodeConfiguration.getMyid() + " starts!");
+		System.out.println("Server " + nodeConfiguration.getMyid() + " connection starts.");
 		while (true) {
 			byte[] data = server.recvFrom();
-			//Packet packet = gson.fromJson(new String(data), Packet.class);
-			Packet packet = objectSerialize.byteArrayToObject(data, Packet.class);
-			int groupId = packet.getGroupId();
-			Accepter accepter = this.groupidToAccepter.get(groupId);
+			Datagram Datagram = objectSerialize.byteArrayToObject(data, Datagram.class);
+			int groupId = Datagram.getGroupId();
 			Proposer proposer = this.groupidToProposer.get(groupId);
+			Acceptor acceptor = this.groupidToAccepter.get(groupId);
 			Learner learner = this.groupidToLearner.get(groupId);
-			if (accepter == null || proposer == null || learner == null) {
+			if (proposer == null || acceptor == null ||  learner == null) {
 				return;
 			}
-			switch (packet.getNodeType()) {
+			switch (Datagram.getNodeType()) {
 			case ACCEPTER:
-				accepter.sendPacket(packet.getPacketBean());
+				acceptor.sendDatagram(Datagram.getDatagramBun());
 				break;
 			case PROPOSER:
-				proposer.sendPacket(packet.getPacketBean());
+				proposer.sendPacket(Datagram.getDatagramBun());
 				break;
 			case LEARNER:
-				learner.sendPacket(packet.getPacketBean());
+				learner.sendPacket(Datagram.getDatagramBun());
 				break;
 			case SERVER:
-				proposer.sendPacket(packet.getPacketBean());
+				proposer.sendPacket(Datagram.getDatagramBun());
 				break;
 			default:
 				break;
