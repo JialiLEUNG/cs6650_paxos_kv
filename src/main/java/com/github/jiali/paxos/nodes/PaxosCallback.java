@@ -2,7 +2,7 @@ package com.github.jiali.paxos.nodes;
 
 public interface PaxosCallback {
 	/**
-	 * 执行器，用于执行确定的状态
+	 * to execute operations as requested
 	 * @param msg
 	 */
 	void callback(byte[] msg);

@@ -36,11 +36,11 @@ public class KvPaxosClient {
 	}
 
 	/**
-	 * 设置对端地址
+	 * set targetaddresss
 	 * @param host
 	 * @param port
 	 */
-	public void targetAddress(String host, int port) {
+	public void setTargetAddress(String host, int port) {
 		this.host = host;
 		this.port = port;
 	}

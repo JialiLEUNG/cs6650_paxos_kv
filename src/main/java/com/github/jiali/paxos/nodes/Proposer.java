@@ -225,6 +225,10 @@ public class Proposer {
 	 *      *
 	 *      * A Proposer should not initiate Paxos
 	 *      * if it cannot communicate with at least a Quorum of Acceptors.
+	 *
+	 *      A key feature of this method is to set time out for the acceptor to respond.
+	 *      if acceptor is not responding the prepare request from proposer in a certain time window,
+	 *      proposer retry phase 1a (send prepare request to acceptors).
 	 * @param id
 	 * @param instance
 	 * @param ballot
@@ -248,7 +252,7 @@ public class Proposer {
 
 			@Override
 			public void run() {
-				// retry phase 1
+				// when timeout, retry phase 1
 				Instance current = instanceState.get(instance);
 				if (current.state == ProposerState.PREPARE) {
 					current.ballot++;

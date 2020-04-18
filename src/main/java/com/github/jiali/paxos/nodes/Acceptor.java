@@ -82,7 +82,7 @@ public class Acceptor {
 			while (true) {
 				try {
 					DatagramBun msg = msgQueue.take();
-					receivePacket(msg);
+					receiveDatagram(msg);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -107,7 +107,7 @@ public class Acceptor {
 	 * @throws UnknownHostException
 	 * @throws IOException
 	 */
-	public void receivePacket(DatagramBun bean) throws UnknownHostException, IOException {
+	public void receiveDatagram(DatagramBun bean) throws UnknownHostException, IOException {
 		switch (bean.getType()) {
 		case "PrepareRequest":
 			PrepareRequest prepareRequest = (PrepareRequest) bean.getPayload();
@@ -188,8 +188,19 @@ public class Acceptor {
 	}
 
 	/**
-	 * handle accept from proposer
-	 * 
+	 * Phase 2b: Accepted
+	 * If an Acceptor receives an Accept message, (n, v), from a Proposer,
+	 * it must accept it if and only if it has not already promised
+	 * (in Phase 1b of the Paxos protocol) to
+	 * only consider proposals having an identifier greater than n.
+	 * If the Acceptor has not already promised (in Phase 1b)
+	 * to only consider proposals having an identifier greater than n,
+	 * it should register the value v (of the just received Accept message)
+	 * as the accepted value (of the Protocol),
+	 * and send an Accepted message to the Proposer and every Learner
+	 * (which can typically be the Proposers themselves).
+	 * Else, it can ignore the Accept message or request.
+	 *
 	 * @param instance current instance
 	 * @param ballot  accepted ballot
 	 * @param value  accepted value

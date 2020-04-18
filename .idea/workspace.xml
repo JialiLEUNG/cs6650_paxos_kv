@@ -1,10 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Client:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="0e8f9523-87a5-4c26-af96-4708e9e043b4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/ReadWriteLock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Client_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run_client.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run_server2.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run_server3.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run_server4.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run_server5.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/Tests/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/Tests/Server1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/Tests/Server2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/Tests/Server3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/Tests/Server4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/Tests/Server5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyPaxos.iml" beforeDir="false" afterPath="$PROJECT_DIR$/KvPaxos.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/conf.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/conf2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/conf3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverConfiguration/server1conf.json" beforeDir="false" afterPath="$PROJECT_DIR$/serverConfiguration/server1conf.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverConfiguration/server2conf.json" beforeDir="false" afterPath="$PROJECT_DIR$/serverConfiguration/server2conf.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverConfiguration/server3conf.json" beforeDir="false" afterPath="$PROJECT_DIR$/serverConfiguration/server3conf.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverConfiguration/server4conf.json" beforeDir="false" afterPath="$PROJECT_DIR$/serverConfiguration/server4conf.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverConfiguration/server5conf.json" beforeDir="false" afterPath="$PROJECT_DIR$/serverConfiguration/server5conf.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/main/KvPaxos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/main/KvPaxosServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/main/KvPaxosClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/main/KvPaxosClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/Acceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/Acceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/PaxosCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/PaxosCallback.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/PaxosCallbackImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/PaxosCallbackImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/Proposer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/Proposer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/utils/PaxosClientImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/utils/PaxosClientImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/core/Accepter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/core/ConfObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/core/InfoObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/core/Learner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/core/PaxosCallback.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/core/Proposer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/core/WorkerType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/exception/PaxosClientNullAddressException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/log/MyPaxosLog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/log/MyPaxosLogImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/main/MyPaxos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/main/MyPaxosClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/packet/AcceptPacket.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/packet/AcceptResponsePacket.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/packet/LearnRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/packet/LearnResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/packet/Packet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/packet/PacketBean.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/packet/PreparePacket.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/packet/PrepareResponsePacket.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/packet/Value.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/utils/ConfReader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/utils/FileUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/utils/MmapTool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/utils/client/ClientImplByLC4J.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/utils/client/CommClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/utils/client/CommClientImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/utils/client/NonBlockClientImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/utils/serializable/ObjectSerialize.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/utils/serializable/ObjectSerializeImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/utils/server/CommServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/utils/server/CommServerImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/utils/server/NonBlockServerImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/utils/server/ServerImplByLC4J.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/ClientInput.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/ClientProto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/KvCallback.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Server1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Server1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Server2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Server2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Server3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Server3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Server4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Server4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Server5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Server5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/luohaha/paxos/benchmark/BMCallback.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/luohaha/paxos/benchmark/BMClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/luohaha/paxos/benchmark/BMServer1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/luohaha/paxos/benchmark/BMServer2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/luohaha/paxos/benchmark/BMServer3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/luohaha/paxos/kvTest/ClientTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/luohaha/paxos/kvTest/KvCallback.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/luohaha/paxos/kvTest/MsgBean.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/luohaha/paxos/kvTest/ServerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/luohaha/paxos/kvTest/ServerTest2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/luohaha/paxos/kvTest/ServerTest3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/luohaha/paxos/utils/serializable/SerializeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/MyPaxos.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/jiali/paxos/main/KvPaxos$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/jiali/paxos/main/KvPaxos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/jiali/paxos/main/KvPaxosClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/jiali/paxos/main/KvPaxosClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/jiali/paxos/nodes/Acceptor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/jiali/paxos/nodes/Acceptor$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/jiali/paxos/nodes/Acceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/jiali/paxos/nodes/Acceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/jiali/paxos/nodes/PaxosCallbackImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/jiali/paxos/nodes/PaxosCallbackImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/jiali/paxos/nodes/Proposer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/jiali/paxos/nodes/Proposer$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/jiali/paxos/nodes/Proposer$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/jiali/paxos/nodes/Proposer$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/jiali/paxos/nodes/Proposer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/jiali/paxos/nodes/Proposer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/MyPaxos.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/github/jiali/paxos/kvTest/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/github/jiali/paxos/kvTest/Server1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/github/jiali/paxos/kvTest/Server2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/github/jiali/paxos/kvTest/Server3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/github/jiali/paxos/kvTest/Server4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/github/jiali/paxos/kvTest/Server5.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -20,103 +131,87 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Client.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/Tests/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="156">
+              <caret line="20" column="143" selection-start-line="20" selection-start-column="72" selection-end-line="20" selection-end-column="143" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/KvCallback.java">
+        <entry file="file://$PROJECT_DIR$/run_client.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="33" lean-forward="true" selection-end-line="40" />
+            <state relative-caret-position="75">
+              <caret line="5" column="57" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Server1.java">
+        <entry file="file://$PROJECT_DIR$/README.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="56" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="56" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="375">
+              <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/ClientProto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/ClientInput.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="14" selection-end-line="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/clientRequests/ClientInput.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/PaxosCallbackImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="885">
-              <caret line="59" column="18" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/ReadWriteLock.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Server3.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/clientRequests/ClientRequest.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="12" column="56" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
+              <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Server4.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/clientRequests/ClientRequestDeleteOnly.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state>
+              <caret selection-end-line="1" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/clientRequests/ClientRequestGetOnly.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="1" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/clientRequests/ClientRequestPutOnly.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/serverConfiguration/server3conf.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="19" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/serverConfiguration/server4conf.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/serverConfiguration/server5conf.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -132,9 +227,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>this.log</find>
-      <find>huahua</find>
-      <find>time</find>
       <find>mm:</find>
       <find>/datadir</find>
       <find>msgbean</find>
@@ -162,6 +254,9 @@
       <find>logger</find>
       <find>kv</find>
       <find>kvcall</find>
+      <find>phase 1b</find>
+      <find>phase 2b</find>
+      <find>conn</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/main/java/com/github/luohaha/paxos/core</dir>
@@ -174,29 +269,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/ServerTest2.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/ServerTest3.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/main/MyPaxosClient.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/core/InfoObject.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/core/NodeInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/core/PaxosCallback.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/main/MyPaxos.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/log/MyPaxosLogImpl.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/MsgBean.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/core/NodeType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/log/PaxosLog.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/packet/Value.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/packet/Packet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/core/Proposer.java" />
-        <option value="$PROJECT_DIR$/serverConfiguration/conf1.json" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/core/NodeConfiguration.java" />
-        <option value="$PROJECT_DIR$/serverConfiguration/conf2.json" />
-        <option value="$PROJECT_DIR$/serverConfiguration/conf3.json" />
-        <option value="$PROJECT_DIR$/serverConfiguration/conf4.json" />
-        <option value="$PROJECT_DIR$/serverConfiguration/server5conf.json" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/packet/PacketBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/datagram/PacketBean.java" />
-        <option value="$PROJECT_DIR$/serverConfiguration/server1conf.json" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/core/Learner.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/ClientAll.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/core/Accepter.java" />
@@ -208,23 +281,45 @@
         <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/utils/serializable/ObjectSerializeImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/datagram/DatagramBun.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/datagram/Datagram.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/Proposer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/Acceptor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/utils/PaxosServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/main/KvPaxos.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/main/KvPaxosClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/Learner.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/clientRequests/ClientInput.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/KvCallback.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/ReadWriteLock.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/PaxosCallbackImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/PaxosCallback.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/main/KvPaxosClient.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/Proposer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/Acceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/main/KvPaxosServer.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/ClientInput.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Client.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Server1.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/KvCallback.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Server2.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Server3.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Server4.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Server5.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/ReadWriteLock.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/PaxosCallbackImpl.java" />
+        <option value="$PROJECT_DIR$/run_servers.sh" />
+        <option value="$PROJECT_DIR$/run_server2.sh" />
+        <option value="$PROJECT_DIR$/run_server3.sh" />
+        <option value="$PROJECT_DIR$/run_server4.sh" />
+        <option value="$PROJECT_DIR$/run_server5.sh" />
+        <option value="$PROJECT_DIR$/run_server1.sh" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/utils/PaxosServerImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/utils/PaxosClientImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/Tests/Server3.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/Tests/Server4.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/Tests/Server1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/Tests/Server2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/Tests/Server5.java" />
+        <option value="$PROJECT_DIR$/serverConfiguration/server1conf.json" />
+        <option value="$PROJECT_DIR$/serverConfiguration/server2conf.json" />
+        <option value="$PROJECT_DIR$/serverConfiguration/server5conf.json" />
+        <option value="$PROJECT_DIR$/serverConfiguration/server3conf.json" />
+        <option value="$PROJECT_DIR$/serverConfiguration/server4conf.json" />
+        <option value="$PROJECT_DIR$/run_client.sh" />
+        <option value="$PROJECT_DIR$/README.txt" />
       </list>
     </option>
   </component>
@@ -240,20 +335,15 @@
           <item name="MyPaxos" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="MyPaxos" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
-        </path>
       </expand>
       <select />
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="18" />
-    <option name="y" value="43" />
-    <option name="width" value="1361" />
-    <option name="height" value="835" />
+    <option name="x" value="47" />
+    <option name="y" value="23" />
+    <option name="width" value="1342" />
+    <option name="height" value="809" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -261,13 +351,38 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="MyPaxos" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyPaxos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyPaxos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyPaxos" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyPaxos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyPaxos" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyPaxos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyPaxos" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="Client_jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyPaxos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyPaxos" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="Server1_jar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MyPaxos" type="b2602c69:ProjectViewProjectNode" />
@@ -307,34 +422,49 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="paxos" type="462c0819:PsiDirectoryNode" />
+              <item name="clientRequests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyPaxos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyPaxos" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="paxos" type="462c0819:PsiDirectoryNode" />
+              <item name="datagram" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyPaxos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyPaxos" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="paxos" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyPaxos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyPaxos" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="paxos" type="462c0819:PsiDirectoryNode" />
               <item name="nodes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MyPaxos" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyPaxos" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MyPaxos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyPaxos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MyPaxos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyPaxos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="kvTest" type="462c0819:PsiDirectoryNode" />
+              <item name="paxos" type="462c0819:PsiDirectoryNode" />
+              <item name="Tests" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -347,6 +477,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -355,6 +486,10 @@
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.github.jiali.paxos" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/Tests" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -369,14 +504,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="Application.Server1">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.github.jiali.paxos.kvTest.Client" />
-      <module name="MyPaxos" />
+      <option name="MAIN_CLASS_NAME" value="com.github.jiali.paxos.Tests.Client" />
+      <module name="KvPaxos" />
       <option name="PROGRAM_PARAMETERS" value="3001 ./src/main/java/com/github/jiali/paxos/clientRequests/ClientRequest.txt" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.github.jiali.paxos.kvTest.*" />
+          <option name="PATTERN" value="com.github.jiali.paxos.Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.github.jiali.paxos.Tests.Client" />
+      <module name="KvPaxos" />
+      <option name="PROGRAM_PARAMETERS" value="3001 ./src/main/java/com/github/jiali/paxos/clientRequests/ClientRequest.txt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.jiali.paxos.Tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -385,11 +534,12 @@
       </method>
     </configuration>
     <configuration name="Server1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.github.jiali.paxos.kvTest.Server1" />
-      <module name="MyPaxos" />
+      <option name="MAIN_CLASS_NAME" value="com.github.jiali.paxos.Tests.Server1" />
+      <module name="KvPaxos" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/serverConfiguration/server1conf.json" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.github.jiali.paxos.kvTest.*" />
+          <option name="PATTERN" value="com.github.jiali.paxos.Tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -397,25 +547,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Server2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.github.jiali.paxos.kvTest.Server2" />
-      <module name="MyPaxos" />
+    <configuration name="Server3 (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.github.jiali.paxos.Tests.Server3" />
+      <module name="KvPaxos" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.github.jiali.paxos.kvTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Server3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.github.jiali.paxos.kvTest.Server3" />
-      <module name="MyPaxos" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.github.jiali.paxos.kvTest.*" />
+          <option name="PATTERN" value="com.github.jiali.paxos.Tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -424,11 +561,24 @@
       </method>
     </configuration>
     <configuration name="Server4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.github.jiali.paxos.kvTest.Server4" />
-      <module name="MyPaxos" />
+      <option name="MAIN_CLASS_NAME" value="com.github.jiali.paxos.Tests.Server4" />
+      <module name="KvPaxos" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.github.jiali.paxos.kvTest.*" />
+          <option name="PATTERN" value="com.github.jiali.paxos.Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.github.jiali.paxos.Tests.Server5" />
+      <module name="KvPaxos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.jiali.paxos.Tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -437,19 +587,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Server2" />
+      <item itemvalue="Application.Server3 (1)" />
+      <item itemvalue="Application.Server4" />
+      <item itemvalue="Application.Server5" />
       <item itemvalue="Application.Client" />
       <item itemvalue="Application.Server1" />
-      <item itemvalue="Application.Server3" />
-      <item itemvalue="Application.Server4" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Client" />
-        <item itemvalue="Application.Server3" />
-        <item itemvalue="Application.Server2" />
         <item itemvalue="Application.Server1" />
+        <item itemvalue="Application.Client" />
+        <item itemvalue="Application.Server5" />
         <item itemvalue="Application.Server4" />
+        <item itemvalue="Application.Server3 (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -472,7 +622,9 @@
       <workItem from="1587094598184" duration="8629000" />
       <workItem from="1587105572734" duration="1635000" />
       <workItem from="1587107766296" duration="1696000" />
-      <workItem from="1587111702073" duration="8989000" />
+      <workItem from="1587111702073" duration="21372000" />
+      <workItem from="1587174022262" duration="1167000" />
+      <workItem from="1587175548827" duration="5521000" />
     </task>
     <task id="LOCAL-00001" summary="add in test cases">
       <created>1587113957093</created>
@@ -485,7 +637,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128238000" />
+    <option name="totallyTimeSpent" value="147309000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -497,10 +649,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="18" y="43" width="1361" height="835" extended-state="0" />
-    <editor active="true" />
+    <frame x="47" y="23" width="1342" height="809" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27596664" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2876923" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -509,15 +660,15 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32763532" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.47779274" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32932332" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.59090906" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32839838" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3266055" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.25437415" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.25244072" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.4293405" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.27475592" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32970026" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32839838" />
       <window_info anchor="bottom" id="GenProtobuf-Output" order="13" weight="0.3190883" />
@@ -527,7 +678,7 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" visible="true" weight="0.17664897" />
+      <window_info anchor="right" id="Maven" order="6" visible="true" weight="0.17923076" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout>
@@ -613,12 +764,6 @@
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/main/KvPaxos.java</url>
-          <line>69</line>
-          <properties />
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/Learner.java</url>
           <line>158</line>
           <properties />
@@ -634,45 +779,14 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/serverConfiguration/conf4" />
-    <entry file="file://$PROJECT_DIR$/../../paxosProject4/MyPaxos-master/MyPaxos/serverConfig/server4conf.json" />
-    <entry file="file://$PROJECT_DIR$/../../paxosProject4/MyPaxos-master/MyPaxos/serverConfig/server5conf.json" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/log/PaxosLogImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/utils/serializable/SerializeTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/utils/MmapTool.java" />
-    <entry file="file://$PROJECT_DIR$/../../paxosProject4/MyPaxos-master/MyPaxos/serverConfig/server3conf.json" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/net/AbstractPlainSocketImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/PaxosCallback.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="435" selection-start-line="435" selection-end-line="435" />
+        <state relative-caret-position="60">
+          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../paxosProject4/MyPaxos-master/MyPaxos/serverConfig/server1conf.json" />
-    <entry file="file://$PROJECT_DIR$/dataDir/test.log" />
-    <entry file="file://$PROJECT_DIR$/../../paxosProject4/MyPaxos-master/MyPaxos/serverConfig/server2conf.json" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/keyValueStore/KeyValueStore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="4649" column="48" selection-start-line="4649" selection-start-column="48" selection-end-line="4649" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/io/ObjectStreamClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="688" selection-start-line="688" selection-end-line="688" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/utils/FilesHandler.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/datagram/AcceptRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/KvCallback.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/datagram/AcceptResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -680,35 +794,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/jdk.net/jdk/net/ExtendedSocketOptions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="264" selection-start-line="264" selection-end-line="264" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/io/ObjectInputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="2182" column="63" selection-start-line="2182" selection-start-column="53" selection-end-line="2182" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/NodeInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="e#261#262#0" expanded="true" />
-            <element signature="e#277#278#0" expanded="true" />
-            <element signature="e#471#472#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/datagram/Datagram.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
+        <state relative-caret-position="300">
           <caret line="26" selection-start-line="26" selection-end-line="26" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -729,6 +817,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/datagram/PrepareRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/datagram/PrepareResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -736,17 +831,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/utils/client/NonBlockClientImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/datagram/AcceptRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="143" column="37" selection-start-line="143" selection-start-column="37" selection-end-line="143" selection-end-column="37" />
+        <state relative-caret-position="120">
+          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/utils/server/NonBlockServerImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/main/KvPaxosClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="89" column="36" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
+        <state relative-caret-position="84">
+          <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/Acceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="202" selection-start-line="202" selection-end-line="202" />
         </state>
       </provider>
     </entry>
@@ -757,96 +862,134 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/utils/ObjectSerialize.java">
+    <entry file="file://$PROJECT_DIR$/src/main/main.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/ClientInput.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/ClientProto.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        <state relative-caret-position="105">
+          <caret line="18" column="33" selection-start-column="2" selection-end-line="64" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/utils/ObjectSerializeImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Server1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        <state relative-caret-position="120">
+          <caret line="8" column="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.7/gson-2.7.jar!/com/google/gson/Gson.class">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Server2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="11" column="23" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Server3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="12" column="4" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Server4.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="22" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Server5.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="24" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/com/github/jiali/paxos/Tests/Client.class">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret lean-forward="true" />
           <folding>
-            <element signature="e#0#23231#0" expanded="true" />
+            <element signature="e#0#3229#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/Proposer.java">
+    <entry file="file://$PROJECT_DIR$/target/classes/com/github/jiali/paxos/Tests/Server2.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4950">
-          <caret line="349" selection-start-line="349" selection-end-line="349" />
+        <state>
           <folding>
-            <element signature="e#7171#7437#0" expanded="true" />
-            <element signature="e#7436#7437#0" expanded="true" />
+            <element signature="e#0#773#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/Acceptor.java">
+    <entry file="file://$PROJECT_DIR$/target/classes/com/github/jiali/paxos/Tests/Server1.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="305" column="29" selection-start-line="305" selection-start-column="29" selection-end-line="305" selection-end-column="29" />
+        <state relative-caret-position="-5">
+          <caret line="17" column="62" selection-start-line="17" selection-start-column="62" selection-end-line="17" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#773#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/NodeConfiguration.java">
+    <entry file="file://$PROJECT_DIR$/run_server1.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-          <folding>
-            <element signature="e#497#498#0" expanded="true" />
-            <element signature="e#515#516#0" expanded="true" />
-            <element signature="e#735#736#0" expanded="true" />
-            <element signature="e#765#766#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="75">
+          <caret line="5" column="102" selection-start-line="5" selection-start-column="102" selection-end-line="5" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_server2.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="93" selection-start-line="5" selection-start-column="93" selection-end-line="5" selection-end-column="93" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/utils/PaxosServerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        <state relative-caret-position="405">
+          <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/ClientPutOnly.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/net/ServerSocket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        <state relative-caret-position="2340">
+          <caret line="190" column="11" selection-start-line="190" selection-start-column="11" selection-end-line="190" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/utils/PaxosServer.java">
+    <entry file="file://$PROJECT_DIR$/run_server3.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        <state relative-caret-position="75">
+          <caret line="5" column="93" selection-start-line="5" selection-start-column="93" selection-end-line="5" selection-end-column="93" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/Learner.java">
+    <entry file="file://$PROJECT_DIR$/run_server4.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="256" column="55" selection-start-line="256" selection-start-column="55" selection-end-line="256" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="75">
+          <caret line="5" column="93" selection-start-line="5" selection-start-column="93" selection-end-line="5" selection-end-column="93" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/main/KvPaxos.java">
+    <entry file="file://$PROJECT_DIR$/run_server5.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="39" column="38" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
+        <state relative-caret-position="75">
+          <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/main/KvPaxosServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1410">
+          <caret line="115" column="36" selection-start-line="115" selection-start-column="36" selection-end-line="115" selection-end-column="36" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
@@ -854,10 +997,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/main/KvPaxosClient.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/net/AbstractPlainSocketImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+        <state relative-caret-position="5445">
+          <caret line="398" selection-start-line="398" selection-end-line="398" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/Learner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="100" column="20" selection-start-line="100" selection-start-column="20" selection-end-line="100" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -866,117 +1016,126 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/utils/PaxosClientImpl.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/Tests/Server3.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="11" column="53" lean-forward="true" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/PaxosCallback.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Server5.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Server2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="12" column="56" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Server3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="12" column="56" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Server4.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/KvCallback.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="33" lean-forward="true" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/ClientProto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/ClientInput.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/Tests/Server2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="13" column="14" selection-end-line="24" />
+          <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/ReadWriteLock.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/Tests/Server4.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+        <state relative-caret-position="195">
+          <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/clientRequests/ClientInput.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/Tests/Server5.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="195">
+          <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/nodes/PaxosCallbackImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/Tests/Server1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="59" column="18" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="105">
+          <caret line="10" column="147" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="147" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/jiali/paxos/kvTest/Server1.java">
+    <entry file="file://$PROJECT_DIR$/serverConfiguration/server2conf.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="56" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="360">
+          <caret line="24" column="19" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/serverConfiguration/server1conf.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/serverConfiguration/server3conf.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="19" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/serverConfiguration/server4conf.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/serverConfiguration/server5conf.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/Tests/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="20" column="143" selection-start-line="20" selection-start-column="72" selection-end-line="20" selection-end-column="143" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/clientRequests/ClientRequest.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/clientRequests/ClientRequestDeleteOnly.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/clientRequests/ClientRequestGetOnly.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jiali/paxos/clientRequests/ClientRequestPutOnly.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_client.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="57" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -986,10 +1145,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>Client:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -1037,7 +1198,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

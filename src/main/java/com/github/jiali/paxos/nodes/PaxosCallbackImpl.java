@@ -88,6 +88,4 @@ public class PaxosCallbackImpl implements PaxosCallback {
         }catch (Exception e){
         }
     }
-
-
 }

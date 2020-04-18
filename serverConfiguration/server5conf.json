@@ -2,27 +2,27 @@
       "nodes" : [{
       "id" : 1,
       "host" : "localhost",
-      "port" : 3001
+      "port" : 30001
       },
     {
       "id" : 2,
       "host" : "localhost",
-      "port" : 3002
+      "port" : 30002
     },
     {
       "id" : 3,
       "host" : "localhost",
-      "port" : 3003
+      "port" : 30003
     },
     {
       "id" : 4,
       "host" : "localhost",
-      "port" : 3004
+      "port" : 30004
     },
     {
       "id" : 5,
       "host" : "localhost",
-      "port" : 3005
+      "port" : 30005
     }],
   "myid" : 5,
   "timeout" : 1000,
