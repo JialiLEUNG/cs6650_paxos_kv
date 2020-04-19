@@ -37,7 +37,6 @@ Server 2 connection starts.
 Server 3 connection starts.
 Server 4 connection starts.
 Server 5 connection starts.
-Server 0 is running at port 3001 at time: 2020.03.29 AD at 17:11:56 PDT
 
 
 ****** The five servers are running on ports 3001, 3002, 3003, 3004, 3005 by default. ******
